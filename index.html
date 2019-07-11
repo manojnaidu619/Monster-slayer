@@ -43,9 +43,9 @@
 
        <div v-if="gameStart == true" class="row justify-content-center" style="margin-top:50px;">
          <div class="col-6">
-           <div class="card">
+           <div v-for="log in logs" class="card">
             <div class="card-body">
-              <!--This is some text within a card body.-->
+              {{ log }}
             </div>
           </div>
          </div>
