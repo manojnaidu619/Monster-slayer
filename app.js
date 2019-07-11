@@ -24,11 +24,15 @@ new Vue({
     },
     heal: function(){
           this.myHealth += 10
-          var newDamage = this.damage(1,10)
+          var newDamage = this.damage(1,11)
           this.myHealth -= newDamage
     },
     giveUp: function(){
-
+          if(confirm("Do you really wanna Give-up?")){
+            this.gameStart = false
+            this.myHealth = 100
+            this.monsterHealth = 100
+          }
     },
     damage: function(min,max){
       return Math.floor(Math.random()*(max-min+1)+min);
