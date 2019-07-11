@@ -1,0 +1,15 @@
+#progress_row{
+  margin-top: 50px;
+}
+
+.progress-bar{
+  background-color: orange;
+}
+
+#log{
+  text-align: center;
+}
+
+.card{
+  border-color: slategray;
+}

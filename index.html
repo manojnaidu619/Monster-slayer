@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Hello Vue</title>
+  </head>
+  <body>
+   <div id="app">
+     <div class="container">
+       <div id="progress_row" class="row justify-content-center">
+        <div class="col-sm-4 col-md-4">
+          <h2>You</h2>
+          <div class="progress" style="height:40px;">
+            <div class="progress-bar" role="progressbar" :style="{width: myHealth+'%'}" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100">{{myHealth + '%'}}</div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-4">
+          <h2> Monster</h2>
+          <div class="progress" style="height:40px;">
+            <div class="progress-bar" role="progressbar" :style="{width: monsterHealth+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{monsterHealth + '%'}}</div>
+          </div>
+        </div>
+       </div>
+
+       <div class="row justify-content-center" style="margin-top:50px;">
+         <div class="col-auto">
+            <button @click="startGame" type="button" id="new_game" class="btn btn-outline-success btn-lg">Start New Game</button>
+         </div>
+       </div>
+
+       <div v-if="gameStart == true" class="row justify-content-center" style="margin-top:50px;">
+         <div class="col-auto">
+           <button type="button" @click="attack" class="btn btn-primary">Attack</button>
+           <button type="button" @click="specialAttack" class="btn btn-warning">Special Attack</button>
+           <button type="button" @click="heal" class="btn btn-info">Heal</button>
+           <button type="button" @click="giveUp" class="btn btn-dark">Give up</button>
+         </div>
+       </div>
+
+       <div v-if="gameStart == true" class="row justify-content-center" style="margin-top:50px;">
+         <div class="col-6">
+           <div class="card">
+            <div class="card-body">
+              <!--This is some text within a card body.-->
+            </div>
+          </div>
+         </div>
+       </div>
+
+     </div>
+   </div>
+   <script src="app.js"></script>
+  </body>
+</html>
