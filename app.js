@@ -3,7 +3,8 @@ new Vue({
   data: {
     gameStart: false,
     myHealth: 100,
-    monsterHealth: 100
+    monsterHealth: 100,
+    spAttack: 0
   },
   methods:{
     startGame: function() {
@@ -11,15 +12,15 @@ new Vue({
       this.myHealth = 100
       this.monsterHealth = 100
     },
-    attack: function(){
-          var monsterDamage = this.damage()
+    attack: function(min,max){
+          var monsterDamage = this.damage(min,max)
           this.monsterHealth -= monsterDamage
-          var myDamage = this.damage()
+          var myDamage = this.damage(min,max)
           this.myHealth -= myDamage
           this.healthCheck()
     },
     specialAttack: function(){
-
+          this.attack(10,20)
     },
     heal: function(){
 
@@ -27,8 +28,8 @@ new Vue({
     giveUp: function(){
 
     },
-    damage: function(){
-      return Math.floor(Math.random() * 10)
+    damage: function(min,max){
+      return Math.floor(Math.random()*(max-min+1)+min);
     },
     healthCheck: function(){
       if(this.myHealth >= 0 && this.monsterHealth < 0){
