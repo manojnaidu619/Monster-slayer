@@ -11,5 +11,7 @@
 }
 
 .card{
-  border-color: slategray;
+  border-color: Gainsboro;
+  background-color: LightCyan;
+  text-align: center;
 }
