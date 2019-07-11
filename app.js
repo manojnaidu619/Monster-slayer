@@ -23,7 +23,9 @@ new Vue({
           this.attack(10,20)
     },
     heal: function(){
-
+          this.myHealth += 10
+          var newDamage = this.damage(1,10)
+          this.myHealth -= newDamage
     },
     giveUp: function(){
 
